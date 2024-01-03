@@ -9,18 +9,33 @@ body {
   font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#180d27, #0c0219);
-  color: #e5d9f1;
-  min-height: 100vh;
+  color: #000000;
+  overflow-x: hidden;
+}
+.background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://getwallpapers.com/wallpaper/full/7/6/b/51184.jpg");
+  background-size: 100% auto;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.background h1 {
+  color: #ffffff;
+  text-align: center;
+  line-height: 85vh;
+  font-size: 50px;
+}
+.main {
+  background-color: rgb(215, 216, 215);
+  padding: 1rem;
 }
 
 #app {
-  margin: 2rem auto;
   padding: 1rem;
-  max-width: 30rem;
   text-align: center;
-  border-radius: 6px;
-  background: linear-gradient(#beb8cf, #000000);
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
