@@ -1,10 +1,17 @@
 import Card from "./Components/Card";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Banner from "./Components/Banner";
+
 function App() {
+  const defaultTheme = createTheme({
+    palette: { mode: "light", secondary: { main: "#ffffff" } },
+  });
+
   return (
-    <>
-      <div id="app" className="background">
-        <h1>Milosz Wrobel</h1>
-      </div>
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline />
+      <Banner />
       <div className="grid-container main">
         <div class="grid-item">
           <Card
@@ -37,7 +44,7 @@ function App() {
           </Card>
         </div>
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 
