@@ -1,50 +1,30 @@
 import Card from "./Components/Card";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import Banner from "./Components/Banner";
+import Projects from "./Content/Projects.json";
+import { Element } from "react-scroll";
 
 function App() {
-  const defaultTheme = createTheme({
-    palette: { mode: "light", secondary: { main: "#ffffff" } },
-  });
-
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <CssBaseline />
+    <>
       <Banner />
+      <Element name="Scroll here"></Element>
       <div className="grid-container main">
-        <div class="grid-item">
-          <Card
-            className="card"
-            title="Tic Tac Toe project website"
-            link="https://github.com/MiloszWrobel/Tic-Tac-Toe-Website"
-            imgLink={"../../Public/Toe Website.png"}
-          >
-            <p>Here is some text</p>
-          </Card>
-        </div>
-        <div class="grid-item">
-          <Card
-            className="card"
-            title="Tic Tac Toe project website"
-            link="https://github.com/MiloszWrobel/Tic-Tac-Toe-Website"
-            imgLink={"../../Public/Toe Website.png"}
-          >
-            <p>Here is some text</p>
-          </Card>
-        </div>
-        <div class="grid-item">
-          <Card
-            className="card"
-            title="Tic Tac Toe project website"
-            link="https://github.com/MiloszWrobel/Tic-Tac-Toe-Website"
-            imgLink={"../../Public/Toe Website.png"}
-          >
-            <p>Here is some text</p>
-          </Card>
-        </div>
+        {Projects.map((project) => {
+          return (
+            <div class="grid-item">
+              <Card
+                className="card"
+                title={project.title}
+                link={project.link}
+                imgLink={project.imgLink}
+              >
+                <p>{project.text}</p>
+              </Card>
+            </div>
+          );
+        })}
       </div>
-    </ThemeProvider>
+    </>
   );
 }
 
